@@ -2,8 +2,6 @@ package com.saber.view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,6 +20,8 @@ public class Main {
 
         JButton button = new JButton("Show Name ");
 
+        JButton button1 = new JButton("Close");
+
 button.addActionListener(e -> {
     if (textName.getText().isEmpty()){
         JOptionPane.showMessageDialog(panel,"Error Please Enter Your Name");
@@ -34,9 +34,14 @@ button.addActionListener(e -> {
 
 
 
+button1.addActionListener(e -> {
+    System.exit(0);
+});
+
         panel.add(label);
         panel.add(textName);
         panel.add(button);
+        panel.add(button1);
 
         frame.add(panel);
         frame.setVisible(true);
